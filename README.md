@@ -5,6 +5,13 @@
 
 *duplicateFF* created from the bash script [duplicate_FF](https://github.com/Jim-JMCD/duplicate-File-Finder) (private Github repository) using shc. 
 
+### ToDo
+Currently *duplicateFF* searches all the subdirectories of directories that are provided to it. ToDo - add an option to:
+
+* Limit the search only to the supplied directories, subdirectories will not be searched.
+* Limit the search only to a level of subdirectories that the user sets.
+* Limit all subdirectories.
+    
 ### Dependency
 This requires a Linux bash environment to run. Will run in Microsoft WSL2(Linux), duplicateFF will not run in MSYS2, Gitbash and Cygwin environmants
 An exceutable created from the *shc* utility always requires bash. More : [Github shc](https://github.com/neurobin/shc)   
