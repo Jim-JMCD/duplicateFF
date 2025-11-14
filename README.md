@@ -27,7 +27,7 @@ __Foreign Language Characters:__ If Microsoft Excel is the default application f
 __________________________________________________________________________________________
 
 ### Usage 
-#### duplicateFF -l \<search level\> [-f \<filter\>] [-k|K|m|M|g|G \<size\>] -s \<source directory\> .. -s \<source directory\>  
+#### duplicateFF -l \<search level\> [-f \<filter\>] [-k|K|m|M|g|G \<size\>] -s \<source directory\> ... -s \<source directory\>  
 
 Check all mp4 files that are smaller 300MB in Fred's downloads and ./video, all subdirectories will be processed 
 ~~~
@@ -41,18 +41,24 @@ Note: **-s .** could be replaced with **-s $PWD** or the full path. Search filte
 
 Inputs of 'filter' 'source directory' 'output directory' should have single or double quotes otherwise any names with white space will not be processed.
 
-**-l** Search level 
+**-l Search level** 
 
 * -l 0 Process the current directory and all subdirectories.
 * -l 1 Process only the current directory
 * -l 2 Process the current directory and one level below.
 * -l n Process n levels deep in directory structure, includes current directory.
 
-**-f** Optional case insensitive filter, filter the source by part or the whole name of a file. This option can only be used once.
+**-f File name filter** 
 
-**-s** One or many directories can be entered each must start with -s.  
+Optional case insensitive filter, filter the source by part or the whole name of a file. This option can only be used once.
 
-Setting maximum file size is optional, default is 20 GiB.  Ignoring large files can save time.
+**-s Directories to process** 
+
+One or many directories can be entered each must start with -s.  
+
+**Maximum file size filter**
+
+Maximum file sixe filter is optional, default is 20 GiB.  Ignoring large files can save time.
 
 **-k or -K** kilobytes (KiB)
 
@@ -74,10 +80,9 @@ _Additional Notes_
 * Windows file systems occasionally produce some odd stuff that cannot be processed when mounted on Linux.
 
 ### OUTPUTS 
+Output directory created in current directory with name **duplicate_chk_\<date-time\>**  where date-time = yymmdd-HHMMSS. Output directory contains: 
 
-date-time = yymmdd-HHMMSS
-
-__../duplicate_FILES1_<date-time>.csv__  Format – One file per row
+**duplicate_FILES1_\<date-time\>.csv**  Format – One file per row
 
 CSV Columns 
 1. sha256 checksum
@@ -86,7 +91,7 @@ CSV Columns
 4. file size in KiB
 ------------------------------------
 
-__../duplicate_FILES2_<date-time>.csv__  Format – Every row is as unique sha256 value with file size and all files of the same shar256 value. 
+**duplicate_FILES2_\<date-time\>.csv**  Format – Every row is as unique sha256 value with file size and all files of the same shar256 value. 
 
 If more files match the checksum they are added as columns in <file> <directory> pairs i.e. repeats of columns 5 and 6.  
 
@@ -99,13 +104,13 @@ CSV Columns
 6. full path of containing directory (file #2)
 ------------------------------------
 #### Outputs _cont._
-A CSV list of all files processed __../all_files_<date-time>__   ...... Format: check_sum,\"\<full path\>\/\<file name\>\"
+A CSV list of all files processed **all_files_\<date-time\>**   ...... Format: check_sum,\"\<full path\>\/\<file name\>\"
 
-A CSV list of all unique files  __../unique_files_<date-time>.csv__  ... Format: check_sum,\"\<full path\>\/\<file name\>\"
+A CSV list of all unique files  **unique_files_\<date-time\>.csv**  ... Format: check_sum,\"\<full path\>\/\<file name\>\"
 
 If unique files is missing then there are no unique files.
 
-Basic logging __../log__<date-time>.txt__  
+Basic logging **log__<date-time>.txt**  
 
 
    
