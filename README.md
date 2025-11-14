@@ -81,6 +81,11 @@ _Additional Notes_
 
 ### OUTPUTS 
 Output directory created in current directory with name **duplicate_chk_\<date-time\>**  where date-time = yymmdd-HHMMSS. Output directory contains: 
+* duplicate_FILES1_\<date-time\>.csv
+* duplicate_FILES2_\<date-time\>.csv
+* all_files_\<date-time\>.csv
+* unique_files_\<date-time\>.csv
+* log__\<date-time\>.txt
 
 **duplicate_FILES1_\<date-time\>.csv**  Format – One file per row
 
@@ -103,14 +108,14 @@ CSV Columns
 5. fully pathed file name (file #2)
 6. full path of containing directory (file #2)
 ------------------------------------
-#### Outputs _cont._
+
 A CSV list of all files processed **all_files_\<date-time\>**   ...... Format: check_sum,\"\<full path\>\/\<file name\>\"
 
 A CSV list of all unique files  **unique_files_\<date-time\>.csv**  ... Format: check_sum,\"\<full path\>\/\<file name\>\"
 
 If unique files is missing then there are no unique files.
 
-Basic logging **log__<date-time>.txt**  
+Basic logging **log__\<date-time\>.txt**  
 
 
    
