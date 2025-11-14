@@ -35,7 +35,7 @@ duplicateFF -f '.mp4' -m 300 -s './video/' -s '/home/fred/downloads' -l 0
 ~~~
 Check all image (jpg) files my home directory, ignoring directory paths longer that three directories i.e. only search three levels deep.
 ~~~
-duplicateFF -l 3 -f '.jpg  300 -s .      
+duplicateFF -l 3 -f '.jpg'  300 -s .      
 ~~~
 Note: **-s .** could be replaced with **-s $PWD** or the full path. Search filter will process .jpg and .JPG files
 
