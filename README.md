@@ -23,7 +23,7 @@ Directories with name '$RECYCLE.BIN' are ignored. Linux sees some MS Windows dir
 
 ### Output Reports
 
-The following reports are generated in CSV format for easy processing with spreadsheets and scripts. See **Outputs** section for more information.
+The following reports are generated in CSV format for easy processing with spreadsheets and scripts. See **OUTPUTS** section for more information.
 * All duplicate files found, two reports.
 * All files processed.
 * All unique files found.
