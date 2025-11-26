@@ -9,16 +9,28 @@
 This requires a Linux bash environment to run. Will run in Microsoft WSL2(Linux), duplicateFF will not run in MSYS2, Gitbash and Cygwin environmants
 An exceutable created from the *shc* utility always requires bash. More : [Github shc](https://github.com/neurobin/shc)   
                                                                               
-### Notes
+### Inputs
 
 * It requires a least one directory to search many directories can be compared.  
-* Searches can be only the current directory or all subdiorectories, or any subdirectory level that is required.
+* Searches are selectable:
+  * The current directory and all subdirectories **(-l 0)**.
+  * Only the current directory **(-l 1)**.
+  * The current and any subdirectory level that is required **(-l _n_)**
 * Files names and maximum file sizes can be used as filters to narrow searches and save time.
-* Reports are CSV format which can be imported into a spreadsheet. 
+* Linux hidden files are ignored, hidden directories are processed.  
 
 Directories with name '$RECYCLE.BIN' are ignored. Linux sees some MS Windows directories as executable only, a user or app can go into them but can't read them. If the Windows "executable only" directory is user accessible, it be easily corrected by respondiong to "You don't currently have permission to access this folder".  If the directory is not user accessible then its probably a system directory that is not worth checking for dulicate files. 
 
-Linux hidden files are ignored, hidden directories are processed. 
+### Output Reports
+
+The following reports are generated in CSV format for easy processing with spreadsheets and scripts. See **Outputs** section for more information.
+* All duplicate files found, two reports.
+* All files processed.
+* All unique files found.
+* A basic log.
+In thje reports every file checked is accompanied by a SHA256 checksum. 
+
+### Notes
 
 To move or remove duplicate files there are some suggestions in [How to delete duplicate files](https://github.com/Jim-JMCD/duplicateFF/blob/main/How%20to%20delete%20duplicate%20files.md) using the **_duplicateFF_KeepCopy_** and **_duplicateFF_RemoveALL_** scripts in this repository.
 
