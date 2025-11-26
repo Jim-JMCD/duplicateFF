@@ -95,20 +95,25 @@ _Additional Notes_
 
 ### OUTPUTS 
 Output directory created in current directory with name **duplicate_chk_\<date-time\>**  where date-time = yymmdd-HHMMSS. Output directory contains: 
-* duplicate_FILES1_\<date-time\>.csv
-* duplicate_FILES2_\<date-time\>.csv
-* all_files_\<date-time\>.csv
-* unique_files_\<date-time\>.csv
-* log_\<date-time\>.txt
+  
+|  Report type           |        Report file name            | CSV Format                                   |
+|------------------------|------------------------------------|----------------------------------------------|
+|  Duplicate files #1    | duplicate_FILES1_\<date-time\>.csv |                                              |
+|  Duplicate files #2    | duplicate_FILES2_\<date-time\>.csv |                                              |
+|  All files checked     | all_files_\<date-time\>.csv        |  check_sum,"\<full path\>/\<file name\>"     |
+|  Unique files          | unique_files_\<date-time\>.csv     |  check_sum,"\<full path\>/\<file name\> "    |
+|  Basic log             | log_\<date-time\>.txt              |                                              |
+
 
 **duplicate_FILES1_\<date-time\>.csv**  Format – One file per row
 
-CSV Columns 
-1. sha256 checksum
-2. fully pathed file name
-3. full path of containing directory
-4. file size in KiB
-------------------------------------
+| Column   | Attribute              | 
+|   :---:--|------------------------|
+|   1      | sha256 checksum        |
+|   2      | fully pathed file name |
+|   3      | full path of containing directory |
+|   4      | file size in KiB |
+
 
 **duplicate_FILES2_\<date-time\>.csv**  Format – Every row is as unique sha256 value with file size and all files of the same shar256 value. 
 
@@ -123,13 +128,6 @@ CSV Columns
 6. full path of containing directory (file #2)
 ------------------------------------
 
-A CSV list of all files processed **all_files_\<date-time\>.csv**   ...... Format: check_sum,\"\<full path\>\/\<file name\>\"
-
-A CSV list of all unique files  **unique_files_\<date-time\>.csv**  ... Format: check_sum,\"\<full path\>\/\<file name\>\"
-
-If unique files is missing then there are no unique files.
-
-Basic logging **log_\<date-time\>.txt**  
 
 
    
