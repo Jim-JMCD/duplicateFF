@@ -41,17 +41,18 @@ ________________________________________________________________________________
 ### Usage 
 #### duplicateFF -l \<search level\> [-f \<filter\>] [-k|K|m|M|g|G \<size\>] -s \<source directory\> ... -s \<source directory\>  
 
-Check all mp4 files that are smaller 300MB in Fred's downloads and ./video, all subdirectories will be processed 
+1. Check all mp4 files that are smaller 300MB in Fred's downloads and ./video, all subdirectories will be processed 
 ~~~
 duplicateFF -f '.mp4' -m 300 -s './video/' -s '/home/fred/downloads' -l 0   
 ~~~
-Check all image (jpg) files my home directory, ignoring directory paths longer that three directories i.e. only search three levels deep.
+
+2. Check all image (jpg) files Fred's home directory, ignoring directory paths longer that three directories i.e. only search three levels deep.
 ~~~
 duplicateFF -l 3 -f '.jpg' -s .      
 ~~~
-Note: **-s .** could be replaced with **-s $PWD** or the full path. Search filter will process .jpg and .JPG files
+Note: **-s .** could be replaced with **-s $PWD** or the full path. The search filter will process both the .jpg and .JPG files
 
-Inputs of 'filter' 'source directory' 'output directory' should have single or double quotes otherwise any names with white space will not be processed.
+Inputs of 'filter' 'source directory' 'output directory' should have single or double quotes otherwise any names with spaces will not be processed.
 
 **-l Search level** 
 
