@@ -89,6 +89,7 @@ _Additional Notes_
 *  Only the last instances of file size filter is used, the rest are ignored.  
 * Files with identical names and have differeing checksums are considered different files. File contents determines if they are copies.
 * Files with different contents and the same SHA256 have known to occur.
+* Empty files have the SHA256 checksums. Moving and deleting these could cause application problems, they could be 'flag' files. 
 * The app is designed to be thorough, not designed for speed.
 * Windows file systems occasionally produce some odd stuff that cannot be processed when mounted on Linux.
 
