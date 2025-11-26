@@ -98,8 +98,8 @@ Output directory created in current directory with name **duplicate_chk_\<date-t
   
 |  Report type           |        Report file name            | CSV Format                                   |
 |------------------------|------------------------------------|----------------------------------------------|
-|  Duplicate files #1    | duplicate_FILES1_\<date-time\>.csv |                                              |
-|  Duplicate files #2    | duplicate_FILES2_\<date-time\>.csv |                                              |
+|  Duplicate files #1    | duplicate_FILES1_\<date-time\>.csv |  One file per row - see table                |
+|  Duplicate files #2    | duplicate_FILES2_\<date-time\>.csv |  One SHA256 checksum per row - see table     |
 |  All files checked     | all_files_\<date-time\>.csv        |  check_sum,"\<full path\>/\<file name\>"     |
 |  Unique files          | unique_files_\<date-time\>.csv     |  check_sum,"\<full path\>/\<file name\> "    |
 |  Basic log             | log_\<date-time\>.txt              |                                              |
@@ -107,26 +107,29 @@ Output directory created in current directory with name **duplicate_chk_\<date-t
 
 **duplicate_FILES1_\<date-time\>.csv**  Format – One file per row
 
-| Column   | Attribute              | 
-|   :---:--|------------------------|
+|  Column  | Attribute              | 
+|   :---:  |------------------------|
 |   1      | sha256 checksum        |
 |   2      | fully pathed file name |
 |   3      | full path of containing directory |
 |   4      | file size in KiB |
 
-
 **duplicate_FILES2_\<date-time\>.csv**  Format – Every row is as unique sha256 value with file size and all files of the same shar256 value. 
 
-If more files match the checksum they are added as columns in <file> <directory> pairs i.e. repeats of columns 5 and 6.  
+|  Column  | Attribute                                   | 
+|   :---:  |---------------------------------------------|
+|   1      | sha256 checksum                             |
+|   2      | file size in KiB                            |
+|   3      | file 1 - fully pathed file name             |
+|   4      | file 1 - full path of containing directory  |
+|   5      | file 2 - fully pathed file name             |
+|   6      | file 2 - full path of containing directory  |
+|   7      | file 3 - fully pathed file name             |
+|   8      | file 3 - full path of containing directory  |
+|   9      | file 4 - fully pathed file name             |
+|   10     | file 4 - full path of containing directory  |
 
-CSV Columns
-1. sha256 checksum
-2. file size in KiB 
-3. fully pathed file name (file #1)
-4. full path of containing directory (file #1)
-5. fully pathed file name (file #2)
-6. full path of containing directory (file #2)
-------------------------------------
+Each CSV line has a minimum of two files, If more files match the checksum they are added as columns in <file> <directory> pairs i.e. repeats of columns 3 and 64.  
 
 
 
