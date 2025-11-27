@@ -105,20 +105,20 @@ Output directory created in current directory with name **duplicate_chk_\<date-t
 |  Basic log             | log_\<date-time\>.txt              |                                              |
 
 
-**duplicate_FILES1_\<date-time\>.csv**  Format – One file per row
+**Duplicate files #1** One file per row
 
-|  Column  | Attribute              | 
+|  CSV field (column) | Attribute              |
 |   :---:  |------------------------|
-|   1      | sha256 checksum        |
+|   1      | SHA256 checksum        |
 |   2      | fully pathed file name |
 |   3      | full path of containing directory |
 |   4      | file size in KiB |
 
-**duplicate_FILES2_\<date-time\>.csv**  Format – Every row is as unique sha256 value with file size and all files of the same shar256 value. 
+**Duplicates files #2** One SHA256 checksum per row  
 
-|  Column  | Attribute                                   | 
+|  CSV field (column)  | Attribute                       | 
 |   :---:  |---------------------------------------------|
-|   1      | sha256 checksum                             |
+|   1      | SHA256 checksum                             |
 |   2      | file size in KiB                            |
 |   3      | file 1 - fully pathed file name             |
 |   4      | file 1 - full path of containing directory  |
