@@ -94,7 +94,9 @@ _Additional Notes_
 * Windows file systems occasionally produce some odd stuff that cannot be processed when mounted on Linux.
 
 ### OUTPUTS 
-Output directory created in current directory with name **duplicate_chk_\<date-time\>**  where date-time = yymmdd-HHMMSS. Output directory contains: 
+Output directory created in current directory with name **duplicate_chk_\<date-time\>**  where date-time = yymmdd-HHMMSS. 
+
+The output directory contains four reports and one log file. If there are no unique files found, the Unique files report will not be produced:
   
 |  Report type           |        Report file name            | CSV Format                                   |
 |------------------------|------------------------------------|----------------------------------------------|
@@ -128,6 +130,7 @@ Output directory created in current directory with name **duplicate_chk_\<date-t
 |   8      | file 3 - full path of containing directory  |
 |   9      | file 4 - fully pathed file name             |
 |   10     | file 4 - full path of containing directory  |
+|   _etc_  |     _more added as required_                |                  
 
 Each CSV line has a minimum of two files, If more files match the checksum they are added as columns in <file> <directory> pairs i.e. repeats of columns 3 and 64.  
 
